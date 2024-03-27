@@ -1,4 +1,75 @@
+#!/usr/bin/env sh
 
-BLUE=$(tput setaf 6)
+if [ -n "$CI" ]; then
+  exit 0
+fi
 
-echo "${BLUE}Checking commit..."
+# Colors
+  RED=$(tput setaf 1)
+  BLUE=$(tput setaf 6)
+
+# Function for running Prettier check
+prettierCheck() {
+  echo "${BLUE}Running prettier Checking types and rules..."
+  echo ""
+  # Run Prettier
+  npx prettier -c .
+  PRETTIER_RESULT=$?
+  if [ "$PRETTIER_RESULT" -ne 0 ]; then
+    echo ""
+    echo "${RED}PRETTIER ERROR: Prettier failed! Aborting commit."
+    echo ""
+    exit 1
+  else
+    echo ""
+    echo "Prettier check passed!"
+    echo ""
+  fi
+}
+
+# Function for running ESLint check
+eslintCheck() {
+  echo "${BLUE}Running ESLint rules (This may take a few minutes)..."
+  # Run ESLint
+  npx eslint --ext js,jsx .
+  ESLINT_RESULT=$?
+  if [ "$ESLINT_RESULT" -ne 0 ]; then
+    echo ""
+    echo "${RED}ESLINT ERROR: ESLint failed. Aborting commit."
+    echo ""
+    exit 1
+  else
+    echo ""
+    echo "ESLint passed!"
+    echo ""
+  fi
+}
+
+# Function for check branch naming
+branchNameCheck(){
+  echo "${BLUE}Checking branch name..."
+  local_branch_name="$(git rev-parse --abbrev-ref HEAD)"
+  valid_branch_regex='^(release\/[vV]?[0-9]+\.[0-9]+\.[0-9]+|hotfix\/[A-Z0-9]+-[0-9]+-[A-Za-z0-9_-]+|bugfix\/[A-Z0-9]+-[0-9]+-[A-Za-z0-9_-]+|feature\/[A-Z0-9]+-[0-9]+-[A-Za-z0-9_-]+)$'
+
+  message="${RED}BRANCH NAME ERROR: There is something wrong with your branch name. Branch names in this project must adhere to this conventions: https://adedelivered.atlassian.net/l/cp/Po3nc82P. Your commit will be rejected. You should rename your branch to a valid name and try again."
+
+  if ! echo "$local_branch_name" | grep -qE "$valid_branch_regex"; then
+      echo ""
+      echo "$message"
+      echo ""
+      exit 1
+  fi
+  echo ""
+  echo "${BLUE}Branch name passed!"
+  echo ""
+}
+
+# Call the functions as needed
+COMMIT_COUNT=$(git status -s | wc -l)
+if [ "$COMMIT_COUNT" -ge 1 ]; then
+  branchNameCheck
+  prettierCheck
+  eslintCheck
+fi
+
+echo "pre-commit finish!"
