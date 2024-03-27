@@ -1,34 +1,32 @@
+// eslint-disable-next-line no-undef
 module.exports = {
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:storybook/recommended"
+  parser: '@typescript-eslint/parser',
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:storybook/recommended',
+  ],
+  parserOptions: {
+    ecmaVersion: 2020,
+    sourceType: 'module',
+  },
+  plugins: ['@typescript-eslint'],
+  rules: {
+    'react-hooks/exhaustive-deps': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/display-name': 'off',
+    'react/prop-types': 'off',
+    'no-useless-escape': 'off',
+    camelcase: 'off',
+    'jest/no-conditional-expect': 'off',
+    'import/prefer-default-export': 'off',
+    'no-console': [
+      1, // console.log can be commented (for debug) but will throw warning
+      {
+        allow: ['warn', 'error'],
+      },
     ],
-    "overrides": [
-        {
-            "env": {
-                "node": true
-            },
-            "files": [
-                ".eslintrc.{js,cjs}"
-            ],
-            "parserOptions": {
-                "sourceType": "script"
-            }
-        }
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
-    "plugins": [
-        "@typescript-eslint"
-    ],
-    "rules": {
-    }
-}
+    'no-underscore-dangle': ['error', { allowAfterThis: true }],
+    'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
+  },
+};
