@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
-. "${0%/*}/h"
+
+BLUE=$(tput setaf 6)
 
 echo "${BLUE}Checking commit..."
