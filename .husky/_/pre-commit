@@ -1,4 +1,3 @@
-npm test
 #!/usr/bin/env sh
 
 if [ -n "$CI" ]; then
