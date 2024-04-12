@@ -25,7 +25,7 @@ commitMessageCheck() {
     echo "[optional footer(s)]"
     echo ""
     echo "Allowed verbs in imperative mood: fix, feat, build, ci, docs, perf, refactor, style, test, chore"
-    echo "Example: git commit -am  \"feat: CRK-1234 - Add new button\""
+    echo "Example: git commit -am  \"feat: DS - Add new button\""
     echo ""
     echo "${BLUE}Your commit message was:"
     echo "${RED}$commit_message"
