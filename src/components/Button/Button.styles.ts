@@ -12,7 +12,6 @@ export const ButtonStyles = css`
 
   button {
     padding: 8px 16px;
-    border-radius: 4px;
     cursor: pointer;
 
     &:disabled {
@@ -71,5 +70,27 @@ export const ButtonStyles = css`
         text-decoration: none;
       }
     }
+  }
+
+  .small {
+    height: 32px;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .medium {
+    height: 40px;
+    padding: 10px 16px;
+    font-size: 16px;
+  }
+
+  .large {
+    height: 48px;
+    padding: 12px 20px;
+    font-size: 18px;
+  }
+
+  .rounded {
+    border-radius: 4px;
   }
 `;

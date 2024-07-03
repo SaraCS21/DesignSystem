@@ -16,6 +16,12 @@ export class MiBoton extends LitElement {
   @property({ type: String })
   variant = 'contained';
 
+  @property({ type: String })
+  size = 'small';
+
+  @property({ type: Boolean })
+  rounded = false;
+
   static get styles() {
     return [ButtonStyles];
   }
@@ -46,7 +52,14 @@ export class MiBoton extends LitElement {
 
   render() {
     return html`
-      <button ?disabled=${this.disabled} class=${this.variant}>
+      <button
+        ?disabled=${this.disabled}
+        class=${`
+          ${this.variant}
+          ${this.size}
+          ${this.rounded && 'rounded'}
+        `}
+      >
         <slot></slot>
       </button>
     `;

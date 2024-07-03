@@ -4,7 +4,9 @@ interface TemplateProps {
   label: string;
   color: string;
   disabled?: boolean;
-  variant?: string;
+  variant: string;
+  size: string;
+  rounded: boolean;
 }
 
 interface StyleProperties {
