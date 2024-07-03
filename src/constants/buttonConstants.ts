@@ -10,3 +10,5 @@ export const buttonColors = [
 ];
 
 export const buttonVariants = ['contained', 'outlined', 'text'];
+
+export const buttonSizes = ['small', 'medium', 'large'];
