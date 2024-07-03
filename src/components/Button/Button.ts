@@ -1,8 +1,7 @@
-import { LitElement, html } from 'lit';
+import { LitElement, TemplateResult, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { colors } from '../../styles/colors';
-import { ColorKeys } from '../../types/button.type';
-import { StyleProperties } from '../../interfaces/button.interface';
+import { ColorKeys, StyleProperties } from '../../types/button';
 import { ButtonStyles } from './Button.styles';
 
 @customElement('mi-boton')
@@ -22,46 +21,70 @@ export class MiBoton extends LitElement {
   @property({ type: Boolean })
   rounded = false;
 
+  @property({ type: String })
+  href: string | null = null;
+
+  @property({ type: String })
+  target: string | null = null;
+
+  @property({ type: String })
+  icon: TemplateResult | null = null;
+
+  @property({ type: String })
+  iconPosition: 'left' | 'right' | null = null;
+
   static get styles() {
     return [ButtonStyles];
   }
 
   updated(changedProperties: Map<string | number | symbol, unknown>) {
     if (changedProperties.has('color')) {
-      const color = String(this.color);
-
-      this.setStyleProperties({
-        '--background-color': colors[`${color}500`],
-        '--dark-background-color': colors[`${color}700`],
-        '--light-background-color': colors[`${color}200`],
-      });
-
-      if (['warning', 'pink', 'grey'].includes(color)) {
-        this.setStyleProperties({ '--text-color': 'black' });
-      } else {
-        this.setStyleProperties({ '--text-color': 'white' });
-      }
+      this.updateColorStyles();
     }
+  }
+
+  updateColorStyles() {
+    const color = String(this.color);
+
+    this.setStyleProperties({
+      '--background-color': colors[`${color}500`],
+      '--dark-background-color': colors[`${color}700`],
+      '--light-background-color': colors[`${color}200`],
+      '--text-color': this.getTextColor(color),
+    });
+  }
+
+  getTextColor(color: string): string {
+    return ['warning', 'pink', 'grey'].includes(color) ? 'black' : 'white';
   }
 
   setStyleProperties(properties: StyleProperties) {
-    for (const [key, value] of Object.entries(properties)) {
+    Object.entries(properties).forEach(([key, value]) => {
       this.style.setProperty(key, String(value));
-    }
+    });
   }
 
   render() {
-    return html`
-      <button
-        ?disabled=${this.disabled}
-        class=${`
-          ${this.variant}
-          ${this.size}
-          ${this.rounded && 'rounded'}
-        `}
-      >
-        <slot></slot>
-      </button>
+    const buttonClasses = `
+      ${this.variant}
+      ${this.size}
+      ${this.rounded ? 'rounded' : ''}
     `;
+
+    return this.href
+      ? html`
+          <a href=${this.href} target=${this.target} class=${buttonClasses}>
+            ${this.iconPosition === 'left' ? this.icon : ''}
+            <slot></slot>
+            ${this.iconPosition === 'right' ? this.icon : ''}
+          </a>
+        `
+      : html`
+          <button ?disabled=${this.disabled} class=${buttonClasses}>
+            ${this.iconPosition === 'left' ? this.icon : ''}
+            <slot></slot>
+            ${this.iconPosition === 'right' ? this.icon : ''}
+          </button>
+        `;
   }
 }
