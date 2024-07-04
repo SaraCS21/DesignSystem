@@ -5,7 +5,7 @@ import {
   buttonTargets,
   buttonVariants,
 } from '../constants/buttonConstants';
-import { colors } from '../styles/colors';
+import { colors } from '../components/Colors/colors';
 
 type ColorKeys = keyof typeof colors;
 

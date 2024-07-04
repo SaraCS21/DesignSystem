@@ -1,5 +1,5 @@
 import { css } from 'lit';
-import { colors } from '../../styles/colors';
+import { colors } from '../Colors/colors';
 
 export const ButtonStyles = css`
   :host {
