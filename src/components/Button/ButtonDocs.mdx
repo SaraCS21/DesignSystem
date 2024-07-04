@@ -1,0 +1,24 @@
+{/* ButtonDocs.mdx */}
+
+import { Meta, Primary, Controls, Story } from '@storybook/blocks';
+import * as ButtonStories from './Button.stories.ts';
+
+<Meta of={ButtonStories} />
+
+# Button
+
+`my-button` es un componente de botón personalizable construido utilizando `LitElement`.
+
+<Primary />
+
+Este componente permite ajustar diversas propiedades como el color, el tamaño, si está deshabilitado, si tiene bordes redondeados, y más. Además, puede funcionar como un enlace cuando se proporciona una URL.
+
+## Props
+
+<Controls />
+
+## Example Usage
+
+```html
+<my-button color="blue" size="small"> Example Button </my-button>
+```

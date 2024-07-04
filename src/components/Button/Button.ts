@@ -4,7 +4,7 @@ import { colors } from '../../styles/colors';
 import { ColorKeys, StyleProperties } from '../../types/button';
 import { ButtonStyles } from './Button.styles';
 
-@customElement('mi-boton')
+@customElement('my-button')
 export class MiBoton extends LitElement {
   @property({ type: String, reflect: true })
   color: ColorKeys = 'blue';

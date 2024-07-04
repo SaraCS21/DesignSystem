@@ -6,18 +6,19 @@ import {
 } from './buttonConstants';
 
 // Button Component
+// TODO: MODIFICAR LAS DESCRIPCIONES DE LOS ARGUMENTOS
 
 export const labelArg = {
-  description: 'HTML Attribute',
+  description: 'Text displayed inside the component',
   control: 'text',
   type: 'string',
   table: {
-    defaultValue: { summary: 'Button' },
+    defaultValue: { summary: 'Label' },
   },
 };
 
 export const colorArg = {
-  description: 'HTML Attribute',
+  description: 'Defines the color of the component',
   options: buttonColors,
   control: 'select',
   type: 'string',
@@ -27,7 +28,7 @@ export const colorArg = {
 };
 
 export const disabledArg = {
-  description: 'HTML Attribute',
+  description: 'Disables the button if it is set to "true"',
   control: 'boolean',
   type: 'boolean',
   table: {
@@ -36,7 +37,7 @@ export const disabledArg = {
 };
 
 export const variantArg = {
-  description: 'HTML Attribute',
+  description: 'Set the component style',
   options: buttonVariants,
   control: 'select',
   type: 'string',
@@ -46,7 +47,7 @@ export const variantArg = {
 };
 
 export const sizeArg = {
-  description: 'HTML Attribute',
+  description: 'Determine the size of the component',
   options: buttonSizes,
   control: 'select',
   type: 'string',
@@ -56,7 +57,7 @@ export const sizeArg = {
 };
 
 export const roundedArg = {
-  description: 'HTML Attribute',
+  description: 'Makes component edges rounded if set to "true"',
   control: 'boolean',
   type: 'boolean',
   table: {
@@ -65,14 +66,14 @@ export const roundedArg = {
 };
 
 export const hrefArg = {
-  description: 'HTML Attribute',
+  description: 'If provided, converts the button to a link',
   control: 'text',
   type: 'string',
 };
 
 export const targetArg = {
   if: { arg: 'href', neq: '' },
-  description: 'HTML Attribute',
+  description: 'Defines the link destination when "href" is present.',
   options: buttonTargets,
   control: 'select',
   type: 'string',

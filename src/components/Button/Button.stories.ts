@@ -13,8 +13,8 @@ import {
 import './Button';
 
 export default {
-  title: 'MiBoton',
-  component: 'mi-boton',
+  title: 'Design System/Atoms/MyButton',
+  component: 'my-button',
   argTypes: {
     label: labelArg,
     color: colorArg,
@@ -25,7 +25,7 @@ export default {
     href: hrefArg,
     target: targetArg,
   },
-  
+
   args: {
     label: 'Button',
     color: 'blue',
@@ -48,7 +48,7 @@ const Template = ({
   href,
   target,
 }: TemplateProps): TemplateResult => html`
-  <mi-boton
+  <my-button
     color=${color}
     ?disabled=${disabled}
     variant=${variant}
@@ -58,7 +58,7 @@ const Template = ({
     target=${target}
   >
     ${label}
-  </mi-boton>
+  </my-button>
 `;
 
 export const CustomButton: Story = Template.bind({});
