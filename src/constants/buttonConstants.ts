@@ -1,14 +1,3 @@
-export const buttonColors = [
-  'grey',
-  'error',
-  'warning',
-  'success',
-  'blue',
-  'darkBlue',
-  'pink',
-  'lilac',
-] as const;
-
 export const buttonVariants = ['contained', 'outlined', 'text'] as const;
 
 export const buttonSizes = ['small', 'medium', 'large'] as const;

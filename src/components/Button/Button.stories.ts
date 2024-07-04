@@ -9,7 +9,8 @@ import {
   sizeArg,
   targetArg,
   variantArg,
-} from '../../constants/argTypes';
+} from '../../constants/argTypesConstant';
+import { buttonSizes, buttonVariants } from '../../constants/buttonConstants';
 import './Button';
 
 export default {
@@ -19,13 +20,12 @@ export default {
     label: labelArg,
     color: colorArg,
     disabled: disabledArg,
-    variant: variantArg,
-    size: sizeArg,
+    variant: variantArg(buttonVariants),
+    size: sizeArg(buttonSizes),
     rounded: roundedArg,
     href: hrefArg,
     target: targetArg,
   },
-
   args: {
     label: 'Button',
     color: 'blue',
