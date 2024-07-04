@@ -2,7 +2,6 @@ import { TemplateResult } from 'lit';
 
 interface TemplateProps {
   name: string;
-  type: string;
 }
 
 type Story = {
@@ -13,12 +12,6 @@ type Story = {
   };
 };
 
-interface Icon {
-  name: string;
-  type: {
-    outlined: TemplateResult;
-    sharp: TemplateResult;
-  };
-}
+type Icon = TemplateResult;
 
 export type { TemplateProps, Story, Icon };

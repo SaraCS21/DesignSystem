@@ -1,6 +1,6 @@
 import { buttonTargets } from './buttonConstants';
 import { colors } from './colorConstants';
-import { allIcons, iconTypes } from './iconConstants';
+import { ICONS } from './iconConstants';
 
 // Button Component
 
@@ -43,21 +43,11 @@ export const targetArg = {
 
 export const iconArg = {
   description: 'Name of the icon to be displayed',
-  options: allIcons,
+  options: Object.keys(ICONS),
   control: 'select',
   type: 'string',
   table: {
-    defaultValue: { summary: 'home' },
-  },
-};
-
-export const typeArg = {
-  description: 'Type of the icon to be displayed',
-  options: iconTypes,
-  control: 'select',
-  type: 'string',
-  table: {
-    defaultValue: { summary: 'sharp' },
+    defaultValue: { summary: 'homeOutlined' },
   },
 };
 

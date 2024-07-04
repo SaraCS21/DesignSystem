@@ -6,17 +6,14 @@ import { ICONS } from '../../constants/iconConstants';
 @customElement('my-icon')
 export class MiIcon extends LitElement {
   @property({ type: String })
-  name = 'home';
-
-  @property({ type: String })
-  type = 'sharp';
+  name = 'homeOutlined';
 
   static get styles() {
     return [IconStyles];
   }
 
   render() {
-    const icon = ICONS[this.name].type[this.type];
+    const icon = ICONS[this.name];
 
     return html` <div>${icon}</div> `;
   }
