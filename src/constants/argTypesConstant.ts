@@ -1,5 +1,6 @@
 import { buttonTargets } from './buttonConstants';
 import { colors } from './colorConstants';
+import { allIcons, iconTypes } from './iconConstants';
 
 // Button Component
 
@@ -35,6 +36,28 @@ export const targetArg = {
   type: 'string',
   table: {
     defaultValue: { summary: '_blank' },
+  },
+};
+
+// Icon Component
+
+export const iconArg = {
+  description: 'Name of the icon to be displayed',
+  options: allIcons,
+  control: 'select',
+  type: 'string',
+  table: {
+    defaultValue: { summary: 'home' },
+  },
+};
+
+export const typeArg = {
+  description: 'Type of the icon to be displayed',
+  options: iconTypes,
+  control: 'select',
+  type: 'string',
+  table: {
+    defaultValue: { summary: 'sharp' },
   },
 };
 
