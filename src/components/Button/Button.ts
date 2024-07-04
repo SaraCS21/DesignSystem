@@ -1,8 +1,8 @@
 import { LitElement, TemplateResult, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { colors } from '../Colors/colors';
-import { ColorKeys, StyleProperties } from '../../types/button';
 import { ButtonStyles } from './Button.styles';
+import { ColorKeys, StyleProperties } from '../../types/colorTypes';
+import { colors } from '../Colors/colors';
 
 @customElement('my-button')
 export class MiBoton extends LitElement {

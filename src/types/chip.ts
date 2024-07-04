@@ -1,25 +1,14 @@
 import { TemplateResult } from 'lit';
-import {
-  buttonSizes,
-  buttonTargets,
-  buttonVariants,
-} from '../constants/buttonConstants';
+import { chipVariants } from '../constants/chipConstants';
 import { colors as colorConstant } from '../constants/colorConstants';
 
-type VariantOption = (typeof buttonVariants)[number];
+type VariantOption = (typeof chipVariants)[number];
 type ColorOption = (typeof colorConstant)[number];
-type SizeOption = (typeof buttonSizes)[number];
-type TargetOption = (typeof buttonTargets)[number];
 
 interface TemplateProps {
   label: string;
-  color: ColorOption;
-  disabled?: boolean;
   variant: VariantOption;
-  size: SizeOption;
-  rounded: boolean;
-  href?: string;
-  target?: TargetOption;
+  color: ColorOption;
 }
 
 type Story = {
