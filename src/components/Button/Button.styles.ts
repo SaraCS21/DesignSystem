@@ -1,5 +1,5 @@
 import { css } from 'lit';
-import { colors } from '../../styles/colors';
+import { colors } from '../Colors/colors';
 
 export const ButtonStyles = css`
   :host {
@@ -10,9 +10,16 @@ export const ButtonStyles = css`
     --light-background-color: ${colors.blue200};
   }
 
-  button {
-    padding: 8px 16px;
+  button,
+  a {
+    display: inline-block;
+    box-sizing: border-box;
+
     cursor: pointer;
+    transition: 0.3s;
+
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
 
     &:disabled {
       cursor: not-allowed;
