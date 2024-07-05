@@ -1,20 +1,20 @@
 import { TemplateResult, html } from 'lit';
 import { Story, TemplateProps } from '../../types/chip';
 import {
-  colorArg,
-  labelArg,
-  variantArg,
+  COLOR_ARG,
+  LABEL_ARG,
+  VARIANT_ARG,
 } from '../../constants/argTypesConstant';
-import { chipVariants } from '../../constants/chipConstants';
+import { CHIP_VARIANTS } from '../../constants/chipConstants';
 import './Chip';
 
 export default {
   title: 'Design System/Atoms/MyChip',
   component: 'my-chip',
   argTypes: {
-    label: labelArg,
-    variant: variantArg(chipVariants),
-    color: colorArg,
+    label: LABEL_ARG,
+    variant: VARIANT_ARG(CHIP_VARIANTS),
+    color: COLOR_ARG,
   },
   args: {
     label: 'Chip',

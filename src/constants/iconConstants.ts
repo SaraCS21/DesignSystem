@@ -1,151 +1,190 @@
-export const iconTypes = ['outlined', 'shape'] as const;
+const ICON_NORMAL_TYPE = ['normal'] as const;
+
+const ICON_BORDER_TYPES = ['outlined', 'shape'] as const;
+
+const ICON_CIRCLE_TYPES = ['normal', 'circle'] as const;
+
+const ICON_SIZE_TYPES = ['normal', 'small'] as const;
+
+const ICON_OPENING_TYPES = ['normal', 'open'] as const;
+
+const ICON_SLASH_TYPES = ['normal', 'slash'] as const;
+
+const ICON_PIECE_TYPES = ['normal', 'half'] as const;
+
+const ICON_DARK_MODE_TYPES = ['sun', 'moon'] as const;
+
+const ICON_USER_TYPES = [
+  'normal',
+  'add',
+  'edit',
+  'remove',
+  'settings',
+  'circle',
+] as const;
+
+const ICON_ARROW_TYPES = ['repeat', 'up', 'down', 'left', 'right'] as const;
+
+const ICON_CODE_TYPES = [
+  'code',
+  'css',
+  'database',
+  'github',
+  'html',
+  'linkedin',
+  'react',
+  'tailwind',
+  'vue',
+] as const;
+
+const ICON_FILE_TYPES = [
+  'normal',
+  'check',
+  'plus',
+  'clone',
+  'code',
+  'copy',
+  'edit',
+] as const;
+
+const ICON_FOLDER_TYPES = ['normal', 'arrow', 'duplicate', 'open'] as const;
 
 export const ICONS = {
   arrow: {
-    type: ['repeat', 'up', 'down', 'left', 'right'],
-    size: ['normal', 'small'],
+    type: ICON_ARROW_TYPES,
+    size: ICON_SIZE_TYPES,
   },
 
   calendar: {
-    type: ['outlined', 'shape'],
+    type: ICON_BORDER_TYPES,
   },
 
   check: {
-    type: ['normal', 'circle'],
-    circleType: ['outlined', 'shape'],
+    type: ICON_CIRCLE_TYPES,
+    circleType: ICON_BORDER_TYPES,
   },
 
   close: {
-    type: ['normal', 'circle'],
-    circleType: ['outlined', 'shape'],
+    type: ICON_CIRCLE_TYPES,
+    circleType: ICON_BORDER_TYPES,
   },
 
   cloud: {
-    type: ['outlined', 'shape'],
+    type: ICON_BORDER_TYPES,
   },
 
   code: {
-    type: [
-      'code',
-      'css',
-      'database',
-      'github',
-      'html',
-      'linkedin',
-      'react',
-      'tailwind',
-      'vue',
-    ],
+    type: ICON_CODE_TYPES,
   },
 
   darkMode: {
-    type: ['moon', 'sun'],
-    subType: ['outlined', 'shape'],
+    type: ICON_DARK_MODE_TYPES,
+    subType: ICON_BORDER_TYPES,
   },
 
   download: {
-    type: ['outlined', 'shape'],
+    type: ICON_BORDER_TYPES,
   },
 
   edit: {
-    type: ['outlined', 'shape'],
+    type: ICON_BORDER_TYPES,
   },
 
   email: {
-    type: ['normal', 'open'],
-    subType: ['outlined', 'shape'],
+    type: ICON_OPENING_TYPES,
+    subType: ICON_BORDER_TYPES,
   },
 
   exclamation: {
-    type: ['outlined', 'shape'],
+    type: ICON_BORDER_TYPES,
   },
 
   eye: {
-    type: ['normal', 'slash'],
-    subType: ['outlined', 'shape'],
+    type: ICON_SLASH_TYPES,
+    subType: ICON_BORDER_TYPES,
   },
 
   file: {
-    type: ['normal', 'check', 'plus', 'clone', 'code', 'copy', 'edit'],
-    subType: ['outlined', 'shape'],
+    type: ICON_FILE_TYPES,
+    subType: ICON_BORDER_TYPES,
   },
 
   folder: {
-    type: ['normal', 'arrow', 'duplicate', 'open'],
-    subType: ['outlined', 'shape'],
+    type: ICON_FOLDER_TYPES,
+    subType: ICON_BORDER_TYPES,
   },
 
   heart: {
-    type: ['outlined', 'shape'],
+    type: ICON_BORDER_TYPES,
   },
 
   home: {
-    type: ['outlined', 'shape'],
+    type: ICON_BORDER_TYPES,
   },
 
   image: {
-    type: ['outlined', 'shape'],
+    type: ICON_BORDER_TYPES,
   },
 
   info: {
-    type: ['outlined', 'shape'],
+    type: ICON_BORDER_TYPES,
   },
 
   language: {
-    type: ['normal'],
+    type: ICON_NORMAL_TYPE,
   },
 
   link: {
-    type: ['normal'],
+    type: ICON_NORMAL_TYPE,
   },
 
   mapPin: {
-    type: ['outlined', 'shape'],
+    type: ICON_BORDER_TYPES,
   },
 
   minus: {
-    type: ['outlined', 'shape'],
+    type: ICON_BORDER_TYPES,
   },
 
   palette: {
-    type: ['normal'],
+    type: ICON_NORMAL_TYPE,
   },
 
   pause: {
-    type: ['outlined', 'shape'],
+    type: ICON_BORDER_TYPES,
   },
 
   phone: {
-    type: ['outlined', 'shape'],
+    type: ICON_BORDER_TYPES,
   },
 
   plus: {
-    type: ['outlined', 'shape'],
+    type: ICON_BORDER_TYPES,
   },
 
   question: {
-    type: ['outlined', 'shape'],
+    type: ICON_BORDER_TYPES,
   },
 
   search: {
-    type: ['outlined', 'shape'],
+    type: ICON_BORDER_TYPES,
   },
 
   settings: {
-    type: ['outlined', 'shape'],
+    type: ICON_BORDER_TYPES,
   },
 
   star: {
-    type: ['normal', 'half'],
-    subType: ['outlined', 'shape'],
+    type: ICON_PIECE_TYPES,
+    subType: ICON_BORDER_TYPES,
   },
 
   trash: {
-    type: ['outlined', 'shape'],
+    type: ICON_BORDER_TYPES,
   },
 
   user: {
-    type: ['normal', 'add', 'edit', 'remove', 'settings', 'circle'],
-    subType: ['outlined', 'shape'],
+    type: ICON_USER_TYPES,
+    subType: ICON_BORDER_TYPES,
   },
 };

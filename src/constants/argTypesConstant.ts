@@ -1,10 +1,10 @@
-import { buttonTargets } from './buttonConstants';
-import { colors, COLOR_INTENSITY } from './colorConstants';
+import { BUTTON_TARGETS } from './buttonConstants';
+import { COLORS, COLOR_INTENSITY } from './colorConstants';
 import { ICONS } from './iconConstants';
 
 // Button Component
 
-export const disabledArg = {
+export const DISABLED_ARG = {
   description: 'Disables the button if it is set to "true"',
   control: 'boolean',
   type: 'boolean',
@@ -13,7 +13,7 @@ export const disabledArg = {
   },
 };
 
-export const roundedArg = {
+export const ROUNDED_ARG = {
   description: 'Makes component edges rounded if set to "true"',
   control: 'boolean',
   type: 'boolean',
@@ -22,16 +22,16 @@ export const roundedArg = {
   },
 };
 
-export const hrefArg = {
+export const HREF_ARG = {
   description: 'If provided, converts the button to a link',
   control: 'text',
   type: 'string',
 };
 
-export const targetArg = {
+export const TARGET_ARG = {
   if: { arg: 'href', neq: '' },
   description: 'Defines the link destination when "href" is present.',
-  options: buttonTargets,
+  options: BUTTON_TARGETS,
   control: 'select',
   type: 'string',
   table: {
@@ -41,7 +41,7 @@ export const targetArg = {
 
 // Icon Component
 
-export const iconArg = {
+export const ICON_ARG = {
   description: 'Name of the icon to be displayed',
   options: Object.keys(ICONS),
   control: 'select',
@@ -53,7 +53,7 @@ export const iconArg = {
 
 // ----------------------------
 
-export const iconArrowType = {
+export const ICON_ARROW_TYPE = {
   if: { arg: 'name', eq: 'arrow' },
   options: ICONS.arrow.type,
   control: 'select',
@@ -63,7 +63,7 @@ export const iconArrowType = {
   },
 };
 
-export const iconArrowSize = {
+export const ICON_ARROW_SIZE = {
   if: { arg: 'name', eq: 'arrow' },
   options: ICONS.arrow.size,
   control: 'select',
@@ -73,7 +73,7 @@ export const iconArrowSize = {
   },
 };
 
-export const iconCalendarType = {
+export const ICON_CALENDAR_TYPE = {
   if: { arg: 'name', eq: 'calendar' },
   options: ICONS.calendar.type,
   control: 'select',
@@ -83,7 +83,7 @@ export const iconCalendarType = {
   },
 };
 
-export const iconCheckType = {
+export const ICON_CHECK_TYPE = {
   if: { arg: 'name', eq: 'check' },
   options: ICONS.check.type,
   control: 'select',
@@ -93,7 +93,7 @@ export const iconCheckType = {
   },
 };
 
-export const iconCheckCircle = {
+export const ICON_CHECK_CIRCLE = {
   if: { arg: 'checkType', eq: 'circle' },
   options: ICONS.check.circleType,
   control: 'select',
@@ -103,7 +103,7 @@ export const iconCheckCircle = {
   },
 };
 
-export const iconCloseType = {
+export const ICON_CLOSE_TYPE = {
   if: { arg: 'name', eq: 'close' },
   options: ICONS.close.type,
   control: 'select',
@@ -113,7 +113,7 @@ export const iconCloseType = {
   },
 };
 
-export const iconCloseCircle = {
+export const ICON_CLOSE_CIRLCE = {
   if: { arg: 'closeType', eq: 'circle' },
   options: ICONS.close.circleType,
   control: 'select',
@@ -123,7 +123,7 @@ export const iconCloseCircle = {
   },
 };
 
-export const iconCloudType = {
+export const ICON_CLOUD_TYPE = {
   if: { arg: 'name', eq: 'cloud' },
   options: ICONS.cloud.type,
   control: 'select',
@@ -133,7 +133,7 @@ export const iconCloudType = {
   },
 };
 
-export const iconCodeType = {
+export const ICON_CODE_TYPE = {
   if: { arg: 'name', eq: 'code' },
   options: ICONS.code.type,
   control: 'select',
@@ -143,7 +143,7 @@ export const iconCodeType = {
   },
 };
 
-export const iconDarkModeType = {
+export const ICON_DARK_MODE_TYPE = {
   if: { arg: 'name', eq: 'darkMode' },
   options: ICONS.darkMode.type,
   control: 'select',
@@ -153,7 +153,7 @@ export const iconDarkModeType = {
   },
 };
 
-export const iconDarkModeSubType = {
+export const ICON_DARK_MODE_SUB_TYPE = {
   if: { arg: 'name', eq: 'darkMode' },
   options: ICONS.darkMode.subType,
   control: 'select',
@@ -163,7 +163,7 @@ export const iconDarkModeSubType = {
   },
 };
 
-export const iconDownloadType = {
+export const ICON_DOWNLOAD_TYPE = {
   if: { arg: 'name', eq: 'download' },
   options: ICONS.download.type,
   control: 'select',
@@ -173,7 +173,7 @@ export const iconDownloadType = {
   },
 };
 
-export const iconEditType = {
+export const ICON_EDIT_TYPE = {
   if: { arg: 'name', eq: 'edit' },
   options: ICONS.edit.type,
   control: 'select',
@@ -183,7 +183,7 @@ export const iconEditType = {
   },
 };
 
-export const iconEmailType = {
+export const ICON_EMAIL_TYPE = {
   if: { arg: 'name', eq: 'email' },
   options: ICONS.email.type,
   control: 'select',
@@ -193,7 +193,7 @@ export const iconEmailType = {
   },
 };
 
-export const iconEmailSubType = {
+export const ICON_EMAIL_SUB_TYPE = {
   if: { arg: 'name', eq: 'email' },
   options: ICONS.email.subType,
   control: 'select',
@@ -203,7 +203,7 @@ export const iconEmailSubType = {
   },
 };
 
-export const iconExclamationType = {
+export const ICON_EXCLAMATION_TYPE = {
   if: { arg: 'name', eq: 'exclamation' },
   options: ICONS.exclamation.type,
   control: 'select',
@@ -213,7 +213,7 @@ export const iconExclamationType = {
   },
 };
 
-export const iconEyeType = {
+export const ICON_EYE_TYPE = {
   if: { arg: 'name', eq: 'eye' },
   options: ICONS.eye.type,
   control: 'select',
@@ -223,7 +223,7 @@ export const iconEyeType = {
   },
 };
 
-export const iconEyeSubType = {
+export const ICON_EYE_SUB_TYPE = {
   if: { arg: 'name', eq: 'eye' },
   options: ICONS.eye.subType,
   control: 'select',
@@ -233,7 +233,7 @@ export const iconEyeSubType = {
   },
 };
 
-export const iconFileType = {
+export const ICON_FILE_TYPE = {
   if: { arg: 'name', eq: 'file' },
   options: ICONS.file.type,
   control: 'select',
@@ -243,7 +243,7 @@ export const iconFileType = {
   },
 };
 
-export const iconFileSubType = {
+export const ICON_FILE_SUB_TYPE = {
   if: { arg: 'name', eq: 'file' },
   options: ICONS.file.subType,
   control: 'select',
@@ -253,7 +253,7 @@ export const iconFileSubType = {
   },
 };
 
-export const iconFolderType = {
+export const ICON_FOLDER_TYPE = {
   if: { arg: 'name', eq: 'folder' },
   options: ICONS.folder.type,
   control: 'select',
@@ -263,7 +263,7 @@ export const iconFolderType = {
   },
 };
 
-export const iconFolderSubType = {
+export const ICON_FOLDER_SUB_TYPE = {
   if: { arg: 'name', eq: 'folder' },
   options: ICONS.folder.subType,
   control: 'select',
@@ -273,7 +273,7 @@ export const iconFolderSubType = {
   },
 };
 
-export const iconHeartType = {
+export const ICON_HEART_TYPE = {
   if: { arg: 'name', eq: 'heart' },
   options: ICONS.heart.type,
   control: 'select',
@@ -283,7 +283,7 @@ export const iconHeartType = {
   },
 };
 
-export const iconHomeType = {
+export const ICON_HOME_TYPE = {
   if: { arg: 'name', eq: 'home' },
   options: ICONS.home.type,
   control: 'select',
@@ -293,7 +293,7 @@ export const iconHomeType = {
   },
 };
 
-export const iconImageType = {
+export const ICON_IMAGE_TYPE = {
   if: { arg: 'name', eq: 'image' },
   options: ICONS.image.type,
   control: 'select',
@@ -303,7 +303,7 @@ export const iconImageType = {
   },
 };
 
-export const iconInfoType = {
+export const ICON_INFO_TYPE = {
   if: { arg: 'name', eq: 'info' },
   options: ICONS.info.type,
   control: 'select',
@@ -313,7 +313,7 @@ export const iconInfoType = {
   },
 };
 
-export const iconLanguageType = {
+export const ICON_LANGUAGE_TYPE = {
   if: { arg: 'name', eq: 'language' },
   options: ICONS.language.type,
   control: 'select',
@@ -323,7 +323,7 @@ export const iconLanguageType = {
   },
 };
 
-export const iconLinkType = {
+export const ICON_LINK_TYPE = {
   if: { arg: 'name', eq: 'link' },
   options: ICONS.link.type,
   control: 'select',
@@ -333,7 +333,7 @@ export const iconLinkType = {
   },
 };
 
-export const iconMapPinType = {
+export const ICON_MAP_PIN_TYPE = {
   if: { arg: 'name', eq: 'mapPin' },
   options: ICONS.mapPin.type,
   control: 'select',
@@ -343,7 +343,7 @@ export const iconMapPinType = {
   },
 };
 
-export const iconMinusType = {
+export const ICON_MINUS_TYPE = {
   if: { arg: 'name', eq: 'minus' },
   options: ICONS.minus.type,
   control: 'select',
@@ -353,7 +353,7 @@ export const iconMinusType = {
   },
 };
 
-export const iconPaletteType = {
+export const ICON_PALETTE_TYPE = {
   if: { arg: 'name', eq: 'palette' },
   options: ICONS.palette.type,
   control: 'select',
@@ -363,7 +363,7 @@ export const iconPaletteType = {
   },
 };
 
-export const iconPauseType = {
+export const ICON_PAUSE_TYPE = {
   if: { arg: 'name', eq: 'pause' },
   options: ICONS.pause.type,
   control: 'select',
@@ -373,7 +373,7 @@ export const iconPauseType = {
   },
 };
 
-export const iconPhoneType = {
+export const ICON_PHONE_TYPE = {
   if: { arg: 'name', eq: 'phone' },
   options: ICONS.phone.type,
   control: 'select',
@@ -383,7 +383,7 @@ export const iconPhoneType = {
   },
 };
 
-export const iconPlusType = {
+export const ICON_PLUS_TYPE = {
   if: { arg: 'name', eq: 'plus' },
   options: ICONS.plus.type,
   control: 'select',
@@ -393,7 +393,7 @@ export const iconPlusType = {
   },
 };
 
-export const iconQuestionType = {
+export const ICON_QUESTION_TYPE = {
   if: { arg: 'name', eq: 'question' },
   options: ICONS.question.type,
   control: 'select',
@@ -403,7 +403,7 @@ export const iconQuestionType = {
   },
 };
 
-export const iconSearchType = {
+export const ICON_SEARCH_TYPE = {
   if: { arg: 'name', eq: 'search' },
   options: ICONS.search.type,
   control: 'select',
@@ -413,7 +413,7 @@ export const iconSearchType = {
   },
 };
 
-export const iconSettingsType = {
+export const ICON_SETTINGS_TYPE = {
   if: { arg: 'name', eq: 'settings' },
   options: ICONS.settings.type,
   control: 'select',
@@ -423,7 +423,7 @@ export const iconSettingsType = {
   },
 };
 
-export const iconStarType = {
+export const ICON_STAR_TYPE = {
   if: { arg: 'name', eq: 'star' },
   options: ICONS.star.type,
   control: 'select',
@@ -433,7 +433,7 @@ export const iconStarType = {
   },
 };
 
-export const iconStarSubType = {
+export const ICON_STAR_SUB_TYPE = {
   if: { arg: 'name', eq: 'star' },
   options: ICONS.star.subType,
   control: 'select',
@@ -443,7 +443,7 @@ export const iconStarSubType = {
   },
 };
 
-export const iconTrashType = {
+export const ICON_TRASH_TYPE = {
   if: { arg: 'name', eq: 'trash' },
   options: ICONS.trash.type,
   control: 'select',
@@ -453,7 +453,7 @@ export const iconTrashType = {
   },
 };
 
-export const iconUserType = {
+export const ICON_USER_TYPE = {
   if: { arg: 'name', eq: 'user' },
   options: ICONS.user.type,
   control: 'select',
@@ -463,7 +463,7 @@ export const iconUserType = {
   },
 };
 
-export const iconUserSubType = {
+export const ICON_USER_SUB_TYPE = {
   if: { arg: 'name', eq: 'user' },
   options: ICONS.user.subType,
   control: 'select',
@@ -477,7 +477,7 @@ export const iconUserSubType = {
 
 // General Components
 
-export const labelArg = {
+export const LABEL_ARG = {
   description: 'Text displayed inside the component',
   control: 'text',
   type: 'string',
@@ -486,9 +486,9 @@ export const labelArg = {
   },
 };
 
-export const colorArg = {
+export const COLOR_ARG = {
   description: 'Defines the color of the component',
-  options: colors,
+  options: COLORS,
   control: 'select',
   type: 'string',
   table: {
@@ -496,7 +496,7 @@ export const colorArg = {
   },
 };
 
-export const colorIntensityArg = {
+export const COLOR_INTENSITY_ARG = {
   description: 'Defines the color intensity of the component',
   options: COLOR_INTENSITY,
   control: 'select',
@@ -506,7 +506,7 @@ export const colorIntensityArg = {
   },
 };
 
-export const variantArg = <T extends readonly string[]>(variantOption: T) => ({
+export const VARIANT_ARG = <T extends readonly string[]>(variantOption: T) => ({
   description: 'Set the component style',
   options: variantOption,
   control: 'select',
@@ -516,7 +516,7 @@ export const variantArg = <T extends readonly string[]>(variantOption: T) => ({
   },
 });
 
-export const sizeArg = <T extends readonly string[]>(sizeOption: T) => ({
+export const SIZE_ARG = <T extends readonly string[]>(sizeOption: T) => ({
   description: 'Determine the size of the component',
   options: sizeOption,
   control: 'select',
