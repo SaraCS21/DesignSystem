@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithType } from '../../types/icon';
 
 export const mapPinOutlined = html`
   <svg
@@ -27,7 +28,7 @@ export const mapPinOutlined = html`
   </svg>
 `;
 
-export const mapPinSharp = html`
+export const mapPinShape = html`
   <svg
     class="w-6 h-6 text-gray-800 dark:text-white"
     aria-hidden="true"
@@ -44,3 +45,16 @@ export const mapPinSharp = html`
     />
   </svg>
 `;
+
+export const MAP_PIN_ICONS = ({ type }: IconWithType) => {
+  switch (type) {
+    case 'outlined':
+      return mapPinOutlined;
+
+    case 'shape':
+      return mapPinShape;
+
+    default:
+      break;
+  }
+};

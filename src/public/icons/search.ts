@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithType } from '../../types/icon';
 
 export const searchOutlined = html`
   <svg
@@ -37,3 +38,16 @@ export const searchShape = html`
     />
   </svg>
 `;
+
+export const SEARCH_ICONS = ({ type }: IconWithType) => {
+  switch (type) {
+    case 'outlined':
+      return searchOutlined;
+
+    case 'shape':
+      return searchShape;
+
+    default:
+      break;
+  }
+};

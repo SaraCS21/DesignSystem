@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithTypeAndSubType } from '../../types/icon';
 
 export const userOutlined = html`
   <svg
@@ -18,7 +19,7 @@ export const userOutlined = html`
   </svg>
 `;
 
-export const userSharp = html`
+export const userShape = html`
   <svg
     class="w-6 h-6 text-gray-800 dark:text-white"
     aria-hidden="true"
@@ -56,7 +57,7 @@ export const userAddOutlined = html`
   </svg>
 `;
 
-export const userAddSharp = html`
+export const userAddShape = html`
   <svg
     class="w-6 h-6 text-gray-800 dark:text-white"
     aria-hidden="true"
@@ -94,7 +95,7 @@ export const userEditOutlined = html`
   </svg>
 `;
 
-export const userEditSharp = html`
+export const userEditShape = html`
   <svg
     class="w-6 h-6 text-gray-800 dark:text-white"
     aria-hidden="true"
@@ -132,7 +133,7 @@ export const userRemoveOutlined = html`
   </svg>
 `;
 
-export const userRemoveSharp = html`
+export const userRemoveShape = html`
   <svg
     class="w-6 h-6 text-gray-800 dark:text-white"
     aria-hidden="true"
@@ -170,7 +171,7 @@ export const userSettingsOutlined = html`
   </svg>
 `;
 
-export const userSettingsSharp = html`
+export const userSettingsShape = html`
   <svg
     class="w-6 h-6 text-gray-800 dark:text-white"
     aria-hidden="true"
@@ -206,7 +207,7 @@ export const userCircleOutlined = html`
   </svg>
 `;
 
-export const userCircleSharp = html`
+export const userCircleShape = html`
   <svg
     class="w-6 h-6 text-gray-800 dark:text-white"
     aria-hidden="true"
@@ -223,3 +224,76 @@ export const userCircleSharp = html`
     />
   </svg>
 `;
+
+export const USER_ICONS = ({ type, subType }: IconWithTypeAndSubType) => {
+  switch (type) {
+    case 'normal':
+      switch (subType) {
+        case 'outlined':
+          return userOutlined;
+        case 'shape':
+          return userShape;
+        default:
+          break;
+      }
+      break;
+
+    case 'add':
+      switch (subType) {
+        case 'outlined':
+          return userAddOutlined;
+        case 'shape':
+          return userAddShape;
+        default:
+          break;
+      }
+      break;
+
+    case 'edit':
+      switch (subType) {
+        case 'outlined':
+          return userEditOutlined;
+        case 'shape':
+          return userEditShape;
+        default:
+          break;
+      }
+      break;
+
+    case 'remove':
+      switch (subType) {
+        case 'outlined':
+          return userRemoveOutlined;
+        case 'shape':
+          return userRemoveShape;
+        default:
+          break;
+      }
+      break;
+
+    case 'settings':
+      switch (subType) {
+        case 'outlined':
+          return userSettingsOutlined;
+        case 'shape':
+          return userSettingsShape;
+        default:
+          break;
+      }
+      break;
+
+    case 'circle':
+      switch (subType) {
+        case 'outlined':
+          return userCircleOutlined;
+        case 'shape':
+          return userCircleShape;
+        default:
+          break;
+      }
+      break;
+
+    default:
+      break;
+  }
+};

@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithTypeAndSubType } from '../../types/icon';
 
 export const moonOutlined = html`
   <svg
@@ -20,7 +21,7 @@ export const moonOutlined = html`
   </svg>
 `;
 
-export const moonSharp = html`
+export const moonShape = html`
   <svg
     class="w-6 h-6 text-gray-800 dark:text-white"
     aria-hidden="true"
@@ -58,7 +59,7 @@ export const sunOutlined = html`
   </svg>
 `;
 
-export const sunSharp = html`
+export const sunShape = html`
   <svg
     class="w-6 h-6 text-gray-800 dark:text-white"
     aria-hidden="true"
@@ -75,3 +76,32 @@ export const sunSharp = html`
     />
   </svg>
 `;
+
+export const DARK_MODE_ICONS = ({ type, subType }: IconWithTypeAndSubType) => {
+  switch (type) {
+    case 'moon':
+      switch (subType) {
+        case 'outlined':
+          return moonOutlined;
+        case 'shape':
+          return moonShape;
+        default:
+          break;
+      }
+      break;
+
+    case 'sun':
+      switch (subType) {
+        case 'outlined':
+          return sunOutlined;
+        case 'shape':
+          return sunShape;
+        default:
+          break;
+      }
+      break;
+
+    default:
+      break;
+  }
+};

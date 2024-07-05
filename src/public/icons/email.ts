@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithTypeAndSubType } from '../../types/icon';
 
 export const emailOutlined = html`
   <svg
@@ -76,3 +77,32 @@ export const emailOpenShape = html`
     />
   </svg>
 `;
+
+export const EMAIL_ICONS = ({ type, subType }: IconWithTypeAndSubType) => {
+  switch (type) {
+    case 'normal':
+      switch (subType) {
+        case 'outlined':
+          return emailOutlined;
+        case 'shape':
+          return emailShape;
+        default:
+          break;
+      }
+      break;
+
+    case 'open':
+      switch (subType) {
+        case 'outlined':
+          return emailOpenOutlined;
+        case 'shape':
+          return emailOpenShape;
+        default:
+          break;
+      }
+      break;
+
+    default:
+      break;
+  }
+};

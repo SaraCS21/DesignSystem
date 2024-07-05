@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithTypeAndSubType } from '../../types/icon';
 
 export const folderOutlined = html`
   <svg
@@ -156,3 +157,54 @@ export const folderOpenShape = html`
     />
   </svg>
 `;
+
+export const FOLDER_ICONS = ({ type, subType }: IconWithTypeAndSubType) => {
+  switch (type) {
+    case 'normal':
+      switch (subType) {
+        case 'outlined':
+          return folderOutlined;
+        case 'shape':
+          return folderShape;
+        default:
+          break;
+      }
+      break;
+
+    case 'arrow':
+      switch (subType) {
+        case 'outlined':
+          return folderArrowOutlined;
+        case 'shape':
+          return folderArrowShape;
+        default:
+          break;
+      }
+      break;
+
+    case 'duplicate':
+      switch (subType) {
+        case 'outlined':
+          return folderDuplicateOutlined;
+        case 'shape':
+          return folderDuplicateShape;
+        default:
+          break;
+      }
+      break;
+
+    case 'open':
+      switch (subType) {
+        case 'outlined':
+          return folderOpenOutlined;
+        case 'shape':
+          return folderOpenShape;
+        default:
+          break;
+      }
+      break;
+
+    default:
+      break;
+  }
+};

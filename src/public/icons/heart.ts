@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithType } from '../../types/icon';
 
 export const heartOutlined = html`
   <svg
@@ -35,3 +36,16 @@ export const heartShape = html`
     />
   </svg>
 `;
+
+export const HEART_ICONS = ({ type }: IconWithType) => {
+  switch (type) {
+    case 'outlined':
+      return heartOutlined;
+
+    case 'shape':
+      return heartShape;
+
+    default:
+      break;
+  }
+};

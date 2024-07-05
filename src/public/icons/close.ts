@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithTypeAndCircle } from '../../types/icon';
 
 export const closeCircleOutlined = html`
   <svg
@@ -57,3 +58,24 @@ export const close = html`
     />
   </svg>
 `;
+
+export const CLOSE_ICONS = ({ type, circle }: IconWithTypeAndCircle) => {
+  switch (type) {
+    case 'normal':
+      return close;
+
+    case 'circle':
+      switch (circle) {
+        case 'outlined':
+          return closeCircleOutlined;
+        case 'shape':
+          return closeCircleShape;
+        default:
+          break;
+      }
+      break;
+
+    default:
+      break;
+  }
+};

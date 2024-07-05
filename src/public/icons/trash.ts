@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithType } from '../../types/icon';
 
 export const trashOutlined = html`
   <svg
@@ -37,3 +38,16 @@ export const trashShape = html`
     />
   </svg>
 `;
+
+export const TRASH_ICONS = ({ type }: IconWithType) => {
+  switch (type) {
+    case 'outlined':
+      return trashOutlined;
+
+    case 'shape':
+      return trashShape;
+
+    default:
+      break;
+  }
+};

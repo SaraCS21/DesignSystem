@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithTypeAndSubType } from '../../types/icon';
 
 export const starOutlined = html`
   <svg
@@ -69,3 +70,32 @@ export const halfStarShape = html`
     />
   </svg>
 `;
+
+export const STAR_ICONS = ({ type, subType }: IconWithTypeAndSubType) => {
+  switch (type) {
+    case 'normal':
+      switch (subType) {
+        case 'outlined':
+          return starOutlined;
+        case 'shape':
+          return starShape;
+        default:
+          break;
+      }
+      break;
+
+    case 'half':
+      switch (subType) {
+        case 'outlined':
+          return halfStarOutlined;
+        case 'shape':
+          return halfStarShape;
+        default:
+          break;
+      }
+      break;
+
+    default:
+      break;
+  }
+};

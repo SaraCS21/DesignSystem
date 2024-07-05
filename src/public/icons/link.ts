@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithType } from '../../types/icon';
 
 export const link = html`
   <svg
@@ -19,3 +20,13 @@ export const link = html`
     />
   </svg>
 `;
+
+export const LINK_ICONS = ({ type }: IconWithType) => {
+  switch (type) {
+    case 'normal':
+      return link;
+
+    default:
+      break;
+  }
+};

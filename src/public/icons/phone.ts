@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithType } from '../../types/icon';
 
 export const phoneOutlined = html`
   <svg
@@ -20,7 +21,7 @@ export const phoneOutlined = html`
   </svg>
 `;
 
-export const phoneSharp = html`
+export const phoneShape = html`
   <svg
     class="w-6 h-6 text-gray-800 dark:text-white"
     aria-hidden="true"
@@ -35,3 +36,16 @@ export const phoneSharp = html`
     />
   </svg>
 `;
+
+export const PHONE_ICONS = ({ type }: IconWithType) => {
+  switch (type) {
+    case 'outlined':
+      return phoneOutlined;
+
+    case 'shape':
+      return phoneShape;
+
+    default:
+      break;
+  }
+};

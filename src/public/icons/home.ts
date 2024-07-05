@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithType } from '../../types/icon';
 
 export const homeOutlined = html`
   <svg
@@ -15,7 +16,7 @@ export const homeOutlined = html`
   </svg>
 `;
 
-export const homeSharp = html`
+export const homeShape = html`
   <svg
     xmlns="http://www.w3.org/2000/svg"
     x="0px"
@@ -29,3 +30,16 @@ export const homeSharp = html`
     ></path>
   </svg>
 `;
+
+export const HOME_ICONS = ({ type }: IconWithType) => {
+  switch (type) {
+    case 'outlined':
+      return homeOutlined;
+
+    case 'shape':
+      return homeShape;
+
+    default:
+      break;
+  }
+};

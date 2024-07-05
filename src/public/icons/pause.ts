@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithType } from '../../types/icon';
 
 export const pauseCircleOutlined = html`
   <svg
@@ -37,3 +38,16 @@ export const pauseCircleShape = html`
     />
   </svg>
 `;
+
+export const PAUSE_ICONS = ({ type }: IconWithType) => {
+  switch (type) {
+    case 'outlined':
+      return pauseCircleOutlined;
+
+    case 'shape':
+      return pauseCircleShape;
+
+    default:
+      break;
+  }
+};

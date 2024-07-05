@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithType } from '../../types/icon';
 
 export const language = html`
   <svg
@@ -19,3 +20,13 @@ export const language = html`
     />
   </svg>
 `;
+
+export const LANGUAGE_ICONS = ({ type }: IconWithType) => {
+  switch (type) {
+    case 'normal':
+      return language;
+
+    default:
+      break;
+  }
+};

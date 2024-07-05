@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithTypeAndSubType } from '../../types/icon';
 
 export const fileOutlined = html`
   <svg
@@ -283,3 +284,87 @@ export const fileEditShape = html`
     />
   </svg>
 `;
+
+export const FILE_ICONS = ({ type, subType }: IconWithTypeAndSubType) => {
+  switch (type) {
+    case 'normal':
+      switch (subType) {
+        case 'outlined':
+          return fileOutlined;
+        case 'shape':
+          return fileShape;
+        default:
+          break;
+      }
+      break;
+
+    case 'check':
+      switch (subType) {
+        case 'outlined':
+          return fileCheckOutlined;
+        case 'shape':
+          return fileCheckShape;
+        default:
+          break;
+      }
+      break;
+
+    case 'plus':
+      switch (subType) {
+        case 'outlined':
+          return filePlusOutlined;
+        case 'shape':
+          return filePlusShape;
+        default:
+          break;
+      }
+      break;
+
+    case 'clone':
+      switch (subType) {
+        case 'outlined':
+          return fileCloneOutlined;
+        case 'shape':
+          return fileCloneShape;
+        default:
+          break;
+      }
+      break;
+
+    case 'code':
+      switch (subType) {
+        case 'outlined':
+          return fileCodeOutlined;
+        case 'shape':
+          return fileCodeShape;
+        default:
+          break;
+      }
+      break;
+
+    case 'copy':
+      switch (subType) {
+        case 'outlined':
+          return fileCopyOutlined;
+        case 'shape':
+          return fileCopyShape;
+        default:
+          break;
+      }
+      break;
+
+    case 'edit':
+      switch (subType) {
+        case 'outlined':
+          return fileEditOutlined;
+        case 'shape':
+          return fileEditShape;
+        default:
+          break;
+      }
+      break;
+
+    default:
+      break;
+  }
+};

@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithType } from '../../types/icon';
 
 export const exclamationOutlined = html`
   <svg
@@ -37,3 +38,16 @@ export const exclamationShape = html`
     />
   </svg>
 `;
+
+export const EXCLAMATION_ICONS = ({ type }: IconWithType) => {
+  switch (type) {
+    case 'outlined':
+      return exclamationOutlined;
+
+    case 'shape':
+      return exclamationShape;
+
+    default:
+      break;
+  }
+};

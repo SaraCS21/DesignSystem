@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithTypeAndSubType } from '../../types/icon';
 
 export const eyeOutlined = html`
   <svg
@@ -82,3 +83,32 @@ export const eyeSlashShape = html`
     />
   </svg>
 `;
+
+export const EYE_ICONS = ({ type, subType }: IconWithTypeAndSubType) => {
+  switch (type) {
+    case 'normal':
+      switch (subType) {
+        case 'outlined':
+          return eyeOutlined;
+        case 'shape':
+          return eyeShape;
+        default:
+          break;
+      }
+      break;
+
+    case 'slash':
+      switch (subType) {
+        case 'outlined':
+          return eyeSlashOutlined;
+        case 'shape':
+          return eyeSlashShape;
+        default:
+          break;
+      }
+      break;
+
+    default:
+      break;
+  }
+};

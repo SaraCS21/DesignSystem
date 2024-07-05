@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithType } from '../../types/icon';
 
 export const cloudOutlined = html`
   <svg
@@ -38,3 +39,16 @@ export const cloudShape = html`
     />
   </svg>
 `;
+
+export const CLOUD_ICONS = ({ type }: IconWithType) => {
+  switch (type) {
+    case 'outlined':
+      return cloudOutlined;
+
+    case 'shape':
+      return cloudShape;
+
+    default:
+      break;
+  }
+};

@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithType } from '../../types/icon';
 
 export const calendarOutlined = html`
   <svg
@@ -37,3 +38,16 @@ export const calendarShape = html`
     />
   </svg>
 `;
+
+export const CALENDAR_ICONS = ({ type }: IconWithType) => {
+  switch (type) {
+    case 'outlined':
+      return calendarOutlined;
+
+    case 'shape':
+      return calendarShape;
+
+    default:
+      break;
+  }
+};

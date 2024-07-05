@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithType } from '../../types/icon';
 
 export const code = html`
   <svg
@@ -155,3 +156,37 @@ export const vue = html`
     />
   </svg>
 `;
+
+export const CODE_ICONS = ({ type }: IconWithType) => {
+  switch (type) {
+    case 'code':
+      return code;
+
+    case 'css':
+      return css;
+
+    case 'database':
+      return database;
+
+    case 'github':
+      return github;
+
+    case 'html':
+      return htmlIcon;
+
+    case 'linkedin':
+      return linkedin;
+
+    case 'react':
+      return react;
+
+    case 'tailwind':
+      return tailwind;
+
+    case 'vue':
+      return vue;
+
+    default:
+      break;
+  }
+};

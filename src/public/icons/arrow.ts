@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithTypeAndSize } from '../../types/icon';
 
 // Normal arrow
 
@@ -185,3 +186,57 @@ export const arrowRepeat = html`
     />
   </svg>
 `;
+
+export const ARROW_ICONS = ({ type, size }: IconWithTypeAndSize) => {
+  switch (type) {
+    case 'repeat':
+      return arrowRepeat;
+
+    case 'up':
+      switch (size) {
+        case 'normal':
+          return upArrow;
+        case 'small':
+          return upArrowSmall;
+        default:
+          break;
+      }
+      break;
+
+    case 'down':
+      switch (size) {
+        case 'normal':
+          return downArrow;
+        case 'small':
+          return downArrowSmall;
+        default:
+          break;
+      }
+      break;
+
+    case 'left':
+      switch (size) {
+        case 'normal':
+          return leftArrow;
+        case 'small':
+          return leftArrowSmall;
+        default:
+          break;
+      }
+      break;
+
+    case 'right':
+      switch (size) {
+        case 'normal':
+          return rightArrow;
+        case 'small':
+          return rightArrowSmall;
+        default:
+          break;
+      }
+      break;
+
+    default:
+      break;
+  }
+};

@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithType } from '../../types/icon';
 
 export const minusCircleOutlined = html`
   <svg
@@ -37,3 +38,16 @@ export const minusCircleShape = html`
     />
   </svg>
 `;
+
+export const MINUS_ICONS = ({ type }: IconWithType) => {
+  switch (type) {
+    case 'outlined':
+      return minusCircleOutlined;
+
+    case 'shape':
+      return minusCircleShape;
+
+    default:
+      break;
+  }
+};

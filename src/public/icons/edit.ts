@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { IconWithType } from '../../types/icon';
 
 export const editOutlined = html`
   <svg
@@ -42,3 +43,16 @@ export const editShape = html`
     />
   </svg>
 `;
+
+export const EDIT_ICONS = ({ type }: IconWithType) => {
+  switch (type) {
+    case 'outlined':
+      return editOutlined;
+
+    case 'shape':
+      return editShape;
+
+    default:
+      break;
+  }
+};
