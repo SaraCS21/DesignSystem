@@ -33,11 +33,19 @@ import { SETTINGS_ICONS } from '../../public/icons/settings';
 import { STAR_ICONS } from '../../public/icons/star';
 import { TRASH_ICONS } from '../../public/icons/trash';
 import { USER_ICONS } from '../../public/icons/user';
+import { ColorKeys, StyleProperties } from '../../types/colorTypes';
+import { colors } from '../Colors/colors';
 
 @customElement('my-icon')
 export class MiIcon extends LitElement {
   @property({ type: String })
   name = 'arrow';
+
+  @property({ type: String })
+  color: ColorKeys = 'blue';
+
+  @property({ type: Number })
+  colorIntensity = 500;
 
   @property({ type: String })
   arrowType = 'up';
@@ -167,6 +175,27 @@ export class MiIcon extends LitElement {
 
   static get styles() {
     return [IconStyles];
+  }
+
+  updated(changedProperties: Map<string | number | symbol, unknown>) {
+    if (
+      changedProperties.has('color') ||
+      changedProperties.has('colorIntensity')
+    ) {
+      this.updateColorStyles();
+    }
+  }
+
+  updateColorStyles() {
+    this.setStyleProperties({
+      '--text-color': colors[`${this.color}${this.colorIntensity}`],
+    });
+  }
+
+  setStyleProperties(properties: StyleProperties) {
+    Object.entries(properties).forEach(([key, value]) => {
+      this.style.setProperty(key, String(value));
+    });
   }
 
   render() {

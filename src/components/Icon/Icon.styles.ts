@@ -1,6 +1,10 @@
 import { css } from 'lit';
 
 export const IconStyles = css`
+  :host {
+    --text-color: black; /* Valor inicial */
+  }
+
   div {
     display: flex;
     align-items: center;
@@ -10,6 +14,8 @@ export const IconStyles = css`
     svg {
       width: 100%;
       height: auto;
+
+      color: var(--text-color);
     }
   }
 `;

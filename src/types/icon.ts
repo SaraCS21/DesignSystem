@@ -2,6 +2,8 @@ import { TemplateResult } from 'lit';
 
 interface TemplateProps {
   name: string;
+  color: string;
+  colorIntensity: number;
   arrowType: string;
   arrowSize: string;
   calendarType: string;

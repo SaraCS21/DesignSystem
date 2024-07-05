@@ -1,5 +1,5 @@
 import { buttonTargets } from './buttonConstants';
-import { colors } from './colorConstants';
+import { colors, COLOR_INTENSITY } from './colorConstants';
 import { ICONS } from './iconConstants';
 
 // Button Component
@@ -493,6 +493,16 @@ export const colorArg = {
   type: 'string',
   table: {
     defaultValue: { summary: 'blue' },
+  },
+};
+
+export const colorIntensityArg = {
+  description: 'Defines the color intensity of the component',
+  options: COLOR_INTENSITY,
+  control: 'select',
+  type: 'string',
+  table: {
+    defaultValue: { summary: 50 },
   },
 };
 

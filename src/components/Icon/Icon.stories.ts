@@ -1,6 +1,8 @@
 import { TemplateResult, html } from 'lit';
 import { TemplateProps, Story } from '../../types/icon';
 import {
+  colorArg,
+  colorIntensityArg,
   iconArg,
   iconArrowSize,
   iconArrowType,
@@ -52,6 +54,8 @@ export default {
   component: 'my-icon',
   argTypes: {
     name: iconArg,
+    color: colorArg,
+    colorIntensity: colorIntensityArg,
     arrowType: iconArrowType,
     arrowSize: iconArrowSize,
     calendarType: iconCalendarType,
@@ -97,6 +101,8 @@ export default {
   },
   args: {
     name: 'arrow',
+    color: 'blue',
+    colorIntensity: 500,
     arrowType: 'up',
     arrowSize: 'normal',
     calendarType: 'outlined',
@@ -144,6 +150,8 @@ export default {
 
 const Template = ({
   name,
+  color,
+  colorIntensity,
   arrowType,
   arrowSize,
   calendarType,
@@ -189,6 +197,8 @@ const Template = ({
 }: TemplateProps): TemplateResult => html`
   <my-icon
     name=${name}
+    color=${color}
+    colorIntensity=${colorIntensity}
     arrowType=${arrowType}
     arrowSize=${arrowSize}
     calendarType=${calendarType}
@@ -237,6 +247,8 @@ const Template = ({
 export const CustomIcon: Story = Template.bind({});
 CustomIcon.args = {
   name: 'arrow',
+  color: 'blue',
+  colorIntensity: 500,
   arrowType: 'up',
   arrowSize: 'normal',
   calendarType: 'outlined',
