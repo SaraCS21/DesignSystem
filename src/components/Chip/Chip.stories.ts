@@ -4,7 +4,7 @@ import {
   COLOR_ARG,
   LABEL_ARG,
   VARIANT_ARG,
-} from '../../constants/argTypesConstant';
+} from '../../constants/argTypesConstants';
 import { CHIP_VARIANTS } from '../../constants/chipConstants';
 import './Chip';
 

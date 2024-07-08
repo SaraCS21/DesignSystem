@@ -525,3 +525,12 @@ export const SIZE_ARG = <T extends readonly string[]>(sizeOption: T) => ({
     defaultValue: { summary: 'medium' },
   },
 });
+
+export const NAME_ARG = {
+  description: 'Name of the component to be displayed',
+  control: 'text',
+  type: 'string',
+  table: {
+    defaultValue: { summary: 'Name' },
+  },
+};

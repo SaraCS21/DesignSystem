@@ -9,7 +9,7 @@ import {
   SIZE_ARG,
   TARGET_ARG,
   VARIANT_ARG,
-} from '../../constants/argTypesConstant';
+} from '../../constants/argTypesConstants';
 import { BUTTON_SIZES, BUTTON_VARIANTS } from '../../constants/buttonConstants';
 import './Button';
 
