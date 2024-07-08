@@ -46,7 +46,7 @@ import {
   ICON_TRASH_TYPE,
   ICON_USER_SUB_TYPE,
   ICON_USER_TYPE,
-} from '../../constants/argTypesConstant';
+} from '../../constants/argTypesConstants';
 import './Icon';
 
 export default {
