@@ -1,30 +1,30 @@
 import { TemplateResult, html } from 'lit';
 import { Story, TemplateProps } from '../../types/button';
 import {
-  colorArg,
-  disabledArg,
-  hrefArg,
-  labelArg,
-  roundedArg,
-  sizeArg,
-  targetArg,
-  variantArg,
+  COLOR_ARG,
+  DISABLED_ARG,
+  HREF_ARG,
+  LABEL_ARG,
+  ROUNDED_ARG,
+  SIZE_ARG,
+  TARGET_ARG,
+  VARIANT_ARG,
 } from '../../constants/argTypesConstant';
-import { buttonSizes, buttonVariants } from '../../constants/buttonConstants';
+import { BUTTON_SIZES, BUTTON_VARIANTS } from '../../constants/buttonConstants';
 import './Button';
 
 export default {
   title: 'Design System/Atoms/MyButton',
   component: 'my-button',
   argTypes: {
-    label: labelArg,
-    color: colorArg,
-    disabled: disabledArg,
-    variant: variantArg(buttonVariants),
-    size: sizeArg(buttonSizes),
-    rounded: roundedArg,
-    href: hrefArg,
-    target: targetArg,
+    label: LABEL_ARG,
+    color: COLOR_ARG,
+    disabled: DISABLED_ARG,
+    variant: VARIANT_ARG(BUTTON_VARIANTS),
+    size: SIZE_ARG(BUTTON_SIZES),
+    rounded: ROUNDED_ARG,
+    href: HREF_ARG,
+    target: TARGET_ARG,
   },
   args: {
     label: 'Button',

@@ -1,15 +1,15 @@
 import { TemplateResult } from 'lit';
 import {
-  buttonSizes,
-  buttonTargets,
-  buttonVariants,
+  BUTTON_SIZES,
+  BUTTON_TARGETS,
+  BUTTON_VARIANTS,
 } from '../constants/buttonConstants';
-import { colors as colorConstant } from '../constants/colorConstants';
+import { COLORS } from '../constants/colorConstants';
 
-type VariantOption = (typeof buttonVariants)[number];
-type ColorOption = (typeof colorConstant)[number];
-type SizeOption = (typeof buttonSizes)[number];
-type TargetOption = (typeof buttonTargets)[number];
+type VariantOption = (typeof BUTTON_VARIANTS)[number];
+type ColorOption = (typeof COLORS)[number];
+type SizeOption = (typeof BUTTON_SIZES)[number];
+type TargetOption = (typeof BUTTON_TARGETS)[number];
 
 interface TemplateProps {
   label: string;

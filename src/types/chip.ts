@@ -1,9 +1,9 @@
 import { TemplateResult } from 'lit';
-import { chipVariants } from '../constants/chipConstants';
-import { colors as colorConstant } from '../constants/colorConstants';
+import { CHIP_VARIANTS } from '../constants/chipConstants';
+import { COLORS } from '../constants/colorConstants';
 
-type VariantOption = (typeof chipVariants)[number];
-type ColorOption = (typeof colorConstant)[number];
+type VariantOption = (typeof CHIP_VARIANTS)[number];
+type ColorOption = (typeof COLORS)[number];
 
 interface TemplateProps {
   label: string;

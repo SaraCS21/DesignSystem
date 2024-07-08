@@ -1,1 +1,1 @@
-export const chipVariants = ['contained', 'outlined'] as const;
+export const CHIP_VARIANTS = ['contained', 'outlined'] as const;

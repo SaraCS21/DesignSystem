@@ -1,11 +1,18 @@
 import { LitElement, TemplateResult, html } from 'lit';
+import { createContext, provide } from '@lit/context';
 import { customElement, property } from 'lit/decorators.js';
 import { ButtonStyles } from './Button.styles';
 import { ColorKeys, StyleProperties } from '../../types/colorTypes';
-import { colors } from '../Colors/colors';
+import { MyUpdateColors } from '../../lib/utils/MyUpdateColors';
+
+export const updateColorsContext =
+  createContext<MyUpdateColors>('updateColors');
 
 @customElement('my-button')
 export class MiBoton extends LitElement {
+  @provide({ context: updateColorsContext })
+  updateColors = new MyUpdateColors();
+
   @property({ type: String, reflect: true })
   color: ColorKeys = 'blue';
 
@@ -39,23 +46,12 @@ export class MiBoton extends LitElement {
 
   updated(changedProperties: Map<string | number | symbol, unknown>) {
     if (changedProperties.has('color')) {
-      this.updateColorStyles();
+      const styleProperties = this.updateColors.updateColorStyles(
+        String(this.color)
+      );
+
+      this.setStyleProperties(styleProperties);
     }
-  }
-
-  updateColorStyles() {
-    const color = String(this.color);
-
-    this.setStyleProperties({
-      '--background-color': colors[`${color}500`],
-      '--dark-background-color': colors[`${color}700`],
-      '--light-background-color': colors[`${color}200`],
-      '--text-color': this.getTextColor(color),
-    });
-  }
-
-  getTextColor(color: string): string {
-    return ['warning', 'pink', 'grey'].includes(color) ? 'black' : 'white';
   }
 
   setStyleProperties(properties: StyleProperties) {
