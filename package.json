@@ -39,6 +39,7 @@
     "typescript": "^5.4.2"
   },
   "dependencies": {
+    "@lit/context": "^1.1.2",
     "@mdx-js/react": "^3.0.1",
     "@storybook/addon-docs": "^8.1.11"
   }
