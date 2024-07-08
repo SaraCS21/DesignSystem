@@ -21,8 +21,8 @@ const Template = ({ name, size }: TemplateProps): TemplateResult => html`
   <my-avatar name=${name} size=${size} />
 `;
 
-export const CustomChip: Story = Template.bind({});
-CustomChip.args = {
+export const CustomAvatar: Story = Template.bind({});
+CustomAvatar.args = {
   name: 'Avatar',
   size: 'medium',
 };
