@@ -5,6 +5,9 @@ import { AvatarStyles } from './Avatar.styles';
 @customElement('my-avatar')
 export class MiAvatar extends LitElement {
   @property({ type: String })
+  label = 'SC';
+
+  @property({ type: String })
   name = 'Avatar';
 
   @property({ type: String })
@@ -17,11 +20,13 @@ export class MiAvatar extends LitElement {
   render() {
     return html`
       <div class=${this.size}>
-        <img
-          src="https://picsum.photos/200"
-          alt=${this.name}
-          title=${this.name}
-        />
+        ${this.label
+          ? html`${this.label.slice(0, 2).toUpperCase()}`
+          : html`<img
+              src="https://picsum.photos/200"
+              alt=${this.name}
+              title=${this.name}
+            />`}
       </div>
     `;
   }

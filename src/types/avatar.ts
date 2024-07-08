@@ -1,6 +1,7 @@
 import { TemplateResult } from 'lit';
 
 interface TemplateProps {
+  label?: string;
   name: string;
   size: string;
 }
